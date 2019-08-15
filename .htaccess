@@ -18,7 +18,7 @@ RewriteRule ^index\.html$    index\.php [L]
 RewriteRule ^category$      index\.php [L]
 
 # single page by wu
-RewriteRule ^software_download\.html$     software_download\.php [L]
+RewriteRule ^download\.html$     software_download\.php [L]
 RewriteRule ^mobile\/*$      index\.php[L] 
 RewriteRule ^about_us\.html$              about_us\.php [L] 
 RewriteRule ^brand\.html$                 brand\.php [L]
@@ -40,6 +40,8 @@ RewriteRule ^wholesale\.html$             wholesale\.php [L]
 RewriteRule ^gift_gard\.html$             gift_gard\.php [L]
 RewriteRule ^history_list\.html$          history_list\.php [L]
 RewriteRule ^products\.html$              category\.php\?id=858[L]
+RewriteRule ^documents\.html$             article_cat\.php?id=1[L]
+                                 
 
 RewriteRule ^merchants_steps\.html$          merchants_steps\.php [L]
 RewriteRule ^merchants_steps_site\.html$     merchants_steps_site\.php [L]

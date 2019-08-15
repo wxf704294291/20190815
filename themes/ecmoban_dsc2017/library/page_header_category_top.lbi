@@ -93,13 +93,13 @@
 		</div>
 		<div class="nav-main">
 			<ul class="navitems">
-                <li><a href="../index.php"{if $navigator_list.config.index eq 1} class="curr"{/if}>{$lang.home}</a></li>
-				<li><a class href="presale.php?&act=new" class="curr" target="_blank" >新品预售</a></li>
-				<li><a class href="seckill.php" class="curr" target="_blank" >限时秒杀</a></li>
-				<li><a class href="group_buy.php?act=list" class="curr" target="_blank" >团购活动</a></li>
-				<li><a class href="gift_gard.php" class="curr" >礼品卡</a></li>
-				<li><a class href="message.php" class="curr" >意见反馈</a></li>
-				<li><a class href="category.php?id=858" class="curr">产品中心</a></li>
+                <li><a href="../index.html"{if $navigator_list.config.index eq 1} class="curr"{/if}>{$lang.home}</a></li>
+				<li><a class href="presale.html?&act=new" class="curr" target="_blank" >新品预售</a></li>
+				<li><a class href="seckill.html" class="curr" target="_blank" >限时秒杀</a></li>
+				<li><a class href="group_buy.html?act=list" class="curr" target="_blank" >团购活动</a></li>
+				<li><a class href="gift_gard.html" class="curr" >礼品卡</a></li>
+				<li><a class href="message.html" class="curr" >意见反馈</a></li>
+				<li><a class href="products.html" class="curr">产品中心</a></li>
             </ul>
 		</div>
 	</div>
@@ -146,12 +146,12 @@
         </div>
         <div class="nav-main" id="nav">
             <ul class="navitems">
-                <li><a href="../index.php"{if $navigator_list.config.index eq 1} class="curr"{/if}>{$lang.home}</a></li>
-				<li><a class href="presale.php?&act=new" class="curr" target="_blank" >新品预售</a></li>
-				<li><a class href="seckill.php" class="curr" target="_blank" >限时秒杀</a></li>
-				<li><a class href="group_buy.php?act=list" class="curr" target="_blank" >团购活动</a></li>
-				<li><a class href="gift_gard.php" class="curr" >礼品卡</a></li>
-				<li><a class href="message.php" class="curr" >意见反馈</a></li>
+                <li><a href="../index.html"{if $navigator_list.config.index eq 1} class="curr"{/if}>{$lang.home}</a></li>
+				<li><a class href="presale.html?&act=new" class="curr" target="_blank" >新品预售</a></li>
+				<li><a class href="seckill.html" class="curr" target="_blank" >限时秒杀</a></li>
+				<li><a class href="group_buy.html?act=list" class="curr" target="_blank" >团购活动</a></li>
+				<li><a class href="gift_gard.html" class="curr" >礼品卡</a></li>
+				<li><a class href="message.html" class="curr" >意见反馈</a></li>
             </ul>
         </div>
     </div>
@@ -215,13 +215,13 @@
 		<div class="categorys"></div>
 		<div class="nav-main">
 			<ul class="navitems">
-                <li><a href="../index.php"{if $navigator_list.config.index eq 1} class="curr"{/if}>{$lang.home}</a></li>
-				<li><a class href="presale.php?&act=new" class="curr" target="_blank" >新品预售</a></li>
-				<li><a class href="seckill.php" class="curr" target="_blank" >限时秒杀</a></li>
-				<li><a class href="group_buy.php?act=list" class="curr" target="_blank" >团购活动</a></li>
-				<li><a class href="gift_gard.php" class="curr" >礼品卡</a></li>
-				<li><a class href="message.php" class="curr" >意见反馈</a></li>
-				<li><a class href="category.php?id=858" class="curr">产品中心</a></li>
+                <li><a href="../index.html"{if $navigator_list.config.index eq 1} class="curr"{/if}>{$lang.home}</a></li>
+				<li><a class href="presale.html?&act=new" class="curr" target="_blank" >新品预售</a></li>
+				<li><a class href="seckill.html" class="curr" target="_blank" >限时秒杀</a></li>
+				<li><a class href="group_buy.html?act=list" class="curr" target="_blank" >团购活动</a></li>
+				<li><a class href="gift_gard.html" class="curr" >礼品卡</a></li>
+				<li><a class href="message.html" class="curr" >意见反馈</a></li>
+				<li><a class href="products.html" class="curr">产品中心</a></li>
             </ul>
 		</div>
 	</div>
