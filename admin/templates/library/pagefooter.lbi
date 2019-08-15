@@ -1,0 +1,23 @@
+<div id="footer">
+    <p>©2019-2029 深圳市硕泰昌科技有限公司版权所有 ICP备案证书号:XXXXXX</p>
+</div>
+{insert_scripts files='jquery.purebox.js,../js/jquery.picTip.js'}
+{if $cat_belongs eq 0 || $brand_belongs eq 0}
+<script type="text/javascript">
+$(function(){
+	$.jqueryAjax('dialog.php', 'is_ajax=1&act=dialog_upgrade', function(data){
+		var content = data.content;
+		pb({
+			id:"categroy_dialog",
+			title:jl_reminder,
+			width:788,
+			content:content,
+			ok_title:"{$lang.button_submit_alt}",
+			drag:false,
+			foot:false,
+			cl_cBtn:false
+		});			
+	});
+});
+</script>
+{/if}

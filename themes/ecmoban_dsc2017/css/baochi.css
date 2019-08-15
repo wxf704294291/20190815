@@ -1,0 +1,63 @@
+@charset "UTF-8";
+/***start-------保驰云诊断页面样式**/
+.bc-content-main{margin: 0 auto; }
+.bc-content{
+    height:380px; 
+    margin-bottom:10px;
+    padding-left:5%;
+    padding-right:5%;
+    padding-top:5px;
+	margin: 0 auto;
+}
+
+.bc-article-title{
+	width:22%;
+	height:371px;
+	text-align:center;
+	font-size:32px;
+	background-color:green;	
+	border-bottom-size:10px;
+	border-bottom-color:red;
+}
+i{color:#148cef; list-style:none;}
+.bc-title{
+	padding-top:45%;
+}
+.bc-article-content{
+	width:76%;
+	height:371px;
+	font-size:24px;
+	background-color:yellow;
+	margin-left:5px;
+	
+}
+.bc-article-title , .bc-article-content{float:left;}
+/***end-------保驰云诊断页面样式**/
+
+
+/**********start 软件下载页面**************/
+#software_title{
+  font:20px/1.5 Microsoft YaHei,tahoma,arial,Hevetica,\\5b8b\4f53,sans-serif;
+  width:100%;
+  font-weight:bold
+}
+
+#software_title , #software_title li{
+	list-style:none;
+	float:left;
+	display:block;
+	padding:8px;
+	height:inherit;
+}
+#software_title li{
+	width:180px;
+}
+.software_list{margin:0 auto; text-align:center; margin-top:18px; width:100%; }
+.software_list > table{width:100%; border-collapse:separate; border-spacing:0px 30px;}
+
+
+
+
+
+
+/*********end 软件下载页面***********/
