@@ -1,15 +1,14 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-    <meta name="apple-mobile-web-app-capable" content="yes"/>
-    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-    <meta name="format-detection" content="telephone=no"/>
+    <meta charset="UTF-8">
     <title>{$title}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="__PUBLIC__/assets/chat/css/font-awesome.css">
     <link rel="stylesheet" href="__PUBLIC__/assets/chat/css/index.css">
-    <link rel="stylesheet" href="__PUBLIC__/vendor/layui/css/layui.css">
     <script>window.ROOT_URL = '__ROOT__';</script>
 </head>
 <body style="position:relative;">
@@ -38,29 +37,32 @@
                 <div class="cons-head-img-box cons-head-img-boxr"><img /></div>
             </li>
         </ul>
+
     </div>
+    <section class="filter-btn dis-box comment" id="jw-editor">
+        <div class="speak-contcom_form">
+            <span class="fa fa-smile-o btn emotion"></span>
+            <span class="fa fa-image jw-send-image"></span>
+        </div>
+
+        <div class="text-input">
+            <!--<textarea  rows="10" class="write-input" id="saytext" name="saytext"></textarea>-->
+            <div contenteditable="true" class="write-input" id="saytext" name="saytext"></div>
+
+        </div>
+        <div class="send-btn">
+            <button class="send jw-send-msg">发送</button>
+            <input name="file" type="file" style="display:none;" onchange="upload.send_image(this)" />
+        </div>
+
+    </section>
+
+
 </section>
-<section class="filter-btn dis-box comment" id="jw-editor">
-    <div class="speak-contcom_form">
-        <span class="fa fa-smile-o btn emotion"></span>
-        <span class="fa fa-image jw-send-image"></span>
-    </div>
-
-    <div class="text-input">
-        <!--<textarea  rows="10" class="write-input" id="saytext" name="saytext"></textarea>-->
-        <div contenteditable="true" class="write-input" id="saytext" name="saytext"></div>
-
-    </div>
-    <div class="send-btn">
-        <button class="send jw-send-msg">发送</button>
-        <input name="file" type="file" style="display:none;" onchange="upload.send_image(this)" />
-    </div>
-</section>
-
 <script src="__PUBLIC__/assets/chat/js/jquery.min.js"></script>
 <script src="__PUBLIC__/assets/chat/js/jquery.qqFace.js"></script>
-<script src="__PUBLIC__/assets/chat/js/kefu.js"></script>
-<script src="__PUBLIC__/vendor/layui/layui.js"></script>
+<script src="__PUBLIC__/assets/chat/js/index.js"></script>
+
 <script>
     /** 客服 */
     dscmallKefu.user.user_id = "{$user['user_id']}";
@@ -71,8 +73,6 @@
     dscmallKefu.port = "{$port}";
     dscmallKefu.user.goods_id = "{$goods['goods_id']}";
     dscmallKefu.user.store_id = "{$shopinfo['ru_id']}";
-
-    var transMessage_api = "{:url('chat/admin/transmessage')}";
 
     $(function () {
         $('.emotion').qqFace({
@@ -104,31 +104,6 @@
             uid: "{$services_id}"
         };
         {/if}
-
-
-            // 放大显示图片
-        layui.use('layer', function(){
-            var layer = layui.layer;
-
-            let json = {
-                "data": [
-                    {
-                        "alt": "",
-                        "src": "",
-                        "thumb": ""
-                    }
-                ]
-            };
-            $('ul#jw-come-msg').on('click', '.text img', function () {
-
-                let image = $(this).attr('src');
-                json.data[0].src = image;
-                layer.photos({
-                    photos: json
-                });
-            });
-
-        });
     });
 
 
@@ -156,18 +131,12 @@
             dscmallEvent.get_more_message();
             dscmallEvent.get_default_message();
             dscmallEvent.send_image();
+            //屏幕滚动
+            var height = parseInt($('#jw-editor').css('height')) - parseInt($('#saytext').css('height'));
 
-            var u = navigator.userAgent;
-            // var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //g
-            var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
-            if (isIOS) {
-                //屏幕滚动
-                var height = parseInt($('#jw-editor').css('height')) - parseInt($('#saytext').css('height'));
-                $(".write-input").keyup(function(){
-                    $('#jw-editor').css('height', (height + parseInt($(this).css('height')))+'px');
-                });
-            }
-
+            $(".write-input").keyup(function(){
+                $('#jw-editor').css('height', (height + parseInt($(this).css('height')))+'px');
+            });
             //声音
             dscmallEvent.audio = new Audio("__PUBLIC__/assets/chat/media/ling.mp3");
 
@@ -185,7 +154,6 @@
             dscmallEvent.target_service = {
                 uid:data.from_id
             };
-            $("#tank").scrollTop(($('.tank-con').outerHeight()+$("#jw-get-more").outerHeight())-$("#tank").height());
         },
         add_message : function(data, belongs, is_history){
             // belongs 1为自己消息  2为别人消息
@@ -198,14 +166,14 @@
                 content = dscmallEvent.element.message_ele_others;
                 avatar = data.avatar;
             }else{
-                layer.msg('add_message_error');
+                alert('add_message_error');
                 return;
             }
 
             $(content).find('img').attr('src', avatar);
             $(content).find('b').text(data.name);
             $(content).find('.text').html(data.message).text();
-            $(content).find('.text-right span').text(data.time || dscmallKefu.SystemDate());
+            $(content).find('span').text(data.time || dscmallKefu.SystemDate());
 
             if(is_history == 1){
                 //查看历史
@@ -309,27 +277,13 @@
         },
         switch_service : function(data){
             //切换客服
+
             if(data.store_id == dscmallKefu.user.store_id && dscmallEvent.target_service.uid == data.fid){
                 dscmallEvent.target_service.uid = data.sid;
             }
         },
         send_msg : function(msg){
-            if (msg == '' || msg == null) {
-                return false;
-            }
             dscmallKefu.message.msg = msg;
-            // 处理消息接口
-            var regex = /<(?!img|p|\/p).*?>/ig; // 去除所有html标签 且保留img p标签
-            dscmallKefu.message.msg = dscmallKefu.message.msg.replace(regex, "");
-            $.ajax({
-                url: transMessage_api,
-                data: {message: dscmallKefu.message.msg},
-                async: false,
-                type: 'post',
-                success: function (res) {
-                    dscmallKefu.message.msg = res;
-                }
-            });
             dscmallKefu.message.type = 'sendmsg';
             dscmallKefu.message.to_id = dscmallEvent.target_service.uid;
             dscmallKefu.message.avatar = dscmallKefu.user.avatar;
@@ -342,12 +296,14 @@
 
     };
 
+
+
     /** 上传图片类 */
     var upload = {
         xhr : '',
         send_image : function(obj){
             var fileObj = obj.files[0];
-            if (fileObj == undefined) {
+            if(fileObj == undefined){
                 return false;
             }
             var upadload_path = "{:url('sendImage')}";
@@ -357,8 +313,10 @@
             var _xhr = this.xhr;
             var _this = this    ;
             _xhr.onreadystatechange = function(){
-                if (_xhr.readyState == 4) {
-                    if (_xhr.status == 200 || _xhr.status == 0) {
+                if(_xhr.readyState == 4)
+                {
+                    if (_xhr.status == 200 || _xhr.status == 0)
+                    {
                         var result = _xhr.responseText;
                         var data =  JSON.parse(result);
                         _this.callback(data);
@@ -370,17 +328,19 @@
             $(obj).val('');
         },
         createXMLHttpRequest : function(){
-            if (window.ActiveXObject) {
+            if(window.ActiveXObject)
+            {
                 this.xhr = new ActiveXObject("Microsoft.XMLHTTP");
-            } else if(window.XMLHttpRequest) {
+            }
+            else if(window.XMLHttpRequest)
+            {
                 this.xhr = new XMLHttpRequest();
             }
         },
         callback : function(res){
             //回调
-            if (res.code == 0 && res.data.src ) {
-                let str = '<img src="'+res.data.src+'" />';
-                dscmallEvent.send_msg(str);
+            if(res.code == 0){
+                dscmallEvent.send_msg("<img src='"+res.data.src+"' />");
             }
         }
     }

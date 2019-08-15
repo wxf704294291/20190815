@@ -417,9 +417,6 @@ button.remove {
     float: left;
     margin-top: 11px;
     overflow: hidden;
-    width: 60%;
-    white-space: nowrap;
-    text-overflow: ellipsis;
 }
 
 .warp-left-user-text h4 {
@@ -439,7 +436,7 @@ button.remove {
 }
 
 .warpper-center {
-    background: #f8f9fc;
+    background: #fff;
     height: 100%;
     float: left;
     position: absolute;
@@ -474,13 +471,13 @@ button.remove {
 
 .warp-con-product {
     width: 80%;
+    border: 1px solid #eff0f5;
     margin: 0 auto;
     margin-top: 20px;
     padding: 6px;
     border-radius: 8px;
     position: relative;
     overflow: hidden;
-    background:#fff;
 }
 
 .warp-con-product img {
@@ -543,6 +540,7 @@ button.remove {
 .warp-chat-left img, .warp-chat-right img {
     width: 46px;
     height: 46px;
+    border-radius: 9999px;
 }
 
 .warp-chat-left {
@@ -615,15 +613,6 @@ button.remove {
     position: relative
 }
 
-/*-----------客服端商品消息样式-------*/
-.warp-chat-con .text .new_message_list { display:block;float: left;}
-.warp-chat-con .text a { color: #3a63c2;}
-.warp-chat-con .text .new_message_list a { color: #333;}
-.warp-chat-con .text .new_message_list img { border: 1px solid #eff0f5;padding: 5px;display: block;width: 54px;height: 54px;float: left;}
-.warp-chat-con .text .new_message_list .left_goods_info {margin-top: 5px;margin-left: 10px;float: left;width: 78%;}
-.warp-chat-con .text .new_message_list .left_goods_info h4 {margin-bottom:5px;}
-.warp-chat-con .text .new_message_list .left_goods_info span {color:#f93d5d}
-
 #xx {
     float: right;
 }
@@ -639,7 +628,7 @@ button.remove {
 .warp-chat-left .text:before {
     border-top: 7px solid transparent;
     border-bottom: 7px solid transparent;
-    border-right: 10px solid #fff;
+    border-right: 10px solid #02bdd7;
     border-left: 10px solid transparent;
     left: -18px;
     top: 6px;
@@ -655,8 +644,8 @@ button.remove {
 }
 
 .warp-chat-left .text {
-    background: #fff;
-    color: #000;
+    background: #02bdd7;
+    color: #fff;
     max-width: 100%;
     float: left;
 }
@@ -1032,8 +1021,6 @@ button.remove {
 
 .modal-body, .modal-footer {
     padding: 12px 22px;
-    height: 540px;
-    overflow-x: hidden;
 }
 
 .modal-footer-left {
@@ -1420,23 +1407,8 @@ body.login-box{
     padding-left:2px
 }
 .login-top .box img{float:right;}
-.error{display: inline-block;padding-top: 5px;font-size: 12px;color: #2D3947;width: 300px;}
+.error{display: inline-block;padding-top: 5px;font-size: 12px;color: #ec5051;width: 300px;}
 /*切换客服*/
 .msg-list{padding:10px 0;border:1px solid #f8f8f8;border-radius:4px;overflow: hidden;background:rgba(0,0,0,0.6);position:absolute;bottom:33px;left:-45px;}
 .msg-list li{width:70px;height:30px;padding:0 15px;text-align: center;line-height: 30px;font-size: 14px;color:#fff;}
 .msg-list li:hover{color:#02bdd7;}
-
-
-#jw-history-list img {
-    width: auto;
-    height: auto;
-    float: initial;
-    margin: 0;
-    max-width: 300px;
-}
-/*历史消息下的商品信息*/
-#jw-history-list .text .new_message_list { display:block;}
-#jw-history-list .text .new_message_list img { border: 1px solid #eff0f5;padding: 5px;display: block;width: 54px;height: 54px;float: left;}
-#jw-history-list .text .new_message_list .left_goods_info {margin-top: 5px;margin-left: 10px;float: left;width: 80%;text-align: left}
-#jw-history-list .text .new_message_list .left_goods_info h4 {margin-bottom:5px;}
-#jw-history-list .text .new_message_list .left_goods_info span {color:#f93d5d}

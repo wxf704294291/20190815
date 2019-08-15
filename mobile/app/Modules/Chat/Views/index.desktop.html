@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"/>
+    <meta charset="UTF-8">
     <title>{$title}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"/>
     <link rel="stylesheet" href="../themes/ecmoban_dsc/base.css">
     <link rel="stylesheet" href="../themes/ecmoban_dsc/user.css">
     <link rel="stylesheet" href="__PUBLIC__/vendor/layui/css/layui.css">
@@ -11,7 +11,7 @@
     <script src="__PUBLIC__/assets/chat/js/jquery.min.js"></script>
     <script src="__PUBLIC__/vendor/layui/layui.js"></script>
     <script src="__PUBLIC__/vendor/vuejs/vue.min.js"></script>
-    <script src="__PUBLIC__/assets/chat/js/kefu.js"></script>
+    <script src="__PUBLIC__/assets/chat/js/index.js"></script>
     <style>
         body {
             min-height: 500px;
@@ -42,6 +42,7 @@
         </div>
         <div class="user-list">
             <ul>
+
                 <li :class="{'active': k.service_id == current_target}" v-for=" (k, v) in service_list_computer" @click="change_service( k.service_id, $event )" v-if="k != undefined && k.isShow != 0" :data-ruid="k.ru_id">
                     <div class="user-info" :data-index="k.service_id" :data-ruid="k.ru_id" >
                         <em class="store-info zy">
@@ -57,13 +58,16 @@
                         </dl>
                     </div>
                 </li>
+
             </ul>
         </div>
     </div>
     <div class="wrapper__center">
         <div class="im-content">
             <div class="main w1200 user_home user_tran">
-                <div class="user-right dis-box" id="c-tab-box3" >
+                <div class="user-right dis-box"
+                     id="c-tab-box3"
+                >
                     <div class="im-header im-chat-t">
                         <div class="im-shop">
                             <a href="#" class="enter"></a>
@@ -129,9 +133,11 @@
                         </div>
                         <!-- 聊天窗口end -->
                         <div class="warp-editor">
-                            <a class="history-list"><i class="iconfont icon-shijian"></i></a>
+                            <a class="history-list">
+                                <i class="iconfont icon-shijian"></i>
+                            </a>
                             <textarea class="layui-textarea" id="LAY_demo1" style="display: none" v-model="cont"></textarea>
-                            <button class="confirm j-send-msg" title="按Ctrl+Enter键发送消息, 按Enter键换行">发送</button>
+                            <button class="confirm j-send-msg">发送</button>
                         </div>
                     </div>
                 </div>
@@ -167,24 +173,53 @@
                         </li>
                     </ul>
                 </div>
-                <div class="layui-tab-item j-order-list">
+                <div class="layui-tab-item">
+                    {if $order_list != '' && !empty($order_list)}
                     <ul class="order-list">
+                        {foreach $order_list as $v}
                         <li class="order-list-li">
-                            <p><label>订单号：</label><span></span></p>
-                            <a class="img" target="_blank">
-                                <img>
+                            {$v.order_sn}
+                            <a class="img" href="{$v.goods_url}" target="_blank">
+                                <img src="{$v.goods_thumb}">
                             </a>
                             <dl>
                                 <dt>
-                                    <a target="_blank"></a>
+                                    <a href="{$v.goods_url}" target="_blank">{$v.goods_name}</a>
                                 </dt>
                                 <dd class="price">
-
+                                    {$v.order_amount}
                                 </dd>
                             </dl>
+
+                            <a href="{$v.goods_url}" class="send" target="_blank">
+                                {$v.order_time}
+                            </a>
                         </li>
+                        {/foreach}
                     </ul>
+                    {else}
+                    <!--<h4 class="">最近浏览</h4>-->
+                    <!--<ul class="order-list">-->
+                    <!--<li class="order-list-li hover">-->
+                    <!--<a class="img" href="">-->
+                    <!--<img src="http://img14.360buyimg.com/n6/jfs/t6010/239/1641801454/151612/9cd11593/59352d22N6dc1b5a5.jpg"-->
+                    <!--alt="">-->
+                    <!--</a>-->
+                    <!--<dl>-->
+                    <!--<dt>-->
+                    <!--<a href="">【京东超市】花王（Merries）纸尿裤 XL44片 加大号尿不湿（12-20kg）（日本原装进口）</a>-->
+                    <!--</dt>-->
+                    <!--<dd class="price">-->
+                    <!--￥1583.26-->
+                    <!--</dd>-->
+                    <!--</dl>-->
+                    <!--<a href="#" class="send">-->
+                    <!--发送-->
+                    <!--</a>-->
+                    <!--</li>-->
+                    <!--</ul>-->
                     <p class="no-order-list">暂无订单</p>
+                    {/if}
                 </div>
 
             </div>
@@ -207,38 +242,13 @@
     dscmallKefu.user.store_name = "{$shopinfo['shop_name']}";
     var audio_path = "__PUBLIC__/assets/chat/media/ling.mp3",
             chat_list_rul = "{:url('chatlist')}", service_list_chat_data_url = "{:url('ServiceChatData')}",
-            send_image_url = "{:url('sendImage')}", get_more_msg_url = "{:url('SingleChatList')}", order_list_url = "{:url('orderlist')}";
-
-    var transMessage_api = "{:url('chat/admin/transmessage')}";
+            send_image_url = "{:url('sendImage')}", get_more_msg_url = "{:url('SingleChatList')}";
 
     $(function () {
         dscmallEvent.target_service.uid = "{$services_id}";
         dscmallEvent.target_service.uname = null;
 
         dscmallEvent.target_service.store_id = dscmallKefu.user.store_id;
-
-        layui.use('layer', function(){
-            var layer = layui.layer;
-
-            let json = {
-                "data": [
-                    {
-                        "alt": "",
-                        "src": "",
-                        "thumb": ""
-                    }
-                ]
-            };
-            $('#tank ul').on('click', '.text img', function () {
-                let image = $(this).attr('src');
-                json.data[0].src = image;
-                layer.photos({
-                    photos: json
-                });
-            });
-
-        });
-        //
     })
 
 </script>

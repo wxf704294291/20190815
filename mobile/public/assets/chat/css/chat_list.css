@@ -181,8 +181,8 @@
 }
 
 .warp-chat-left .text {
-    background: #f1cdcea3;
-    color: #000;
+    background: #e95858;
+    color: #fff;
     max-width: 100%;
     float: left;
 }
@@ -215,6 +215,7 @@
 .warp-chat-left img, .warp-chat-right img {
     width: 45px;
     height: 45px;
+    border-radius: 9999px;
     margin: 0;
 }
 
@@ -224,7 +225,6 @@
     margin: 0;
     float: initial;
     display:inline-block;
-    max-height: 300px;
 }
 
 .warp-chat-right img {
@@ -257,15 +257,6 @@
     word-wrap: break-word;
     float: right;
 }
-
-/*-----------用户端商品消息样式-------*/
-.warp-chat-con .text .new_message_list { display:block;float: left;}
-.warp-chat-con .text a { color: #3a63c2;}
-.warp-chat-con .text .new_message_list a { color: #333;}
-.warp-chat-con .text .new_message_list img { border: 1px solid #eff0f5;padding: 5px;display: block;width: 54px;height: 54px;float: left;}
-.warp-chat-con .text .new_message_list .left_goods_info {margin-top: 5px;margin-left: 10px;float: left;width: 75%;}
-.warp-chat-con .text .new_message_list .left_goods_info h4 {margin-bottom:5px;}
-.warp-chat-con .text .new_message_list .left_goods_info span {color:#f93d5d}
 
 .warp-chat .send-order{
     overflow:hidden;
@@ -606,7 +597,6 @@ button.confirm {
 
 .wrapper__left .user-list li dd .new-message{
     width:60%;
-    height:20px;
     float:left;
     overflow: hidden;
     white-space: nowrap;
@@ -849,6 +839,4 @@ button.confirm {
 .get-more-msg {
     text-align: center;
     cursor: pointer;
-    margin: 0.5rem;
-    color:#00a2d4;
 }

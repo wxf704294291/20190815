@@ -1,5 +1,6 @@
 layui.use('layedit', function () {
-    var layedit = layui.layedit, $ = layui.jquery;
+    var layedit = layui.layedit
+        , $ = layui.jquery;
 
     //构建一个默认的编辑器
     var index = layedit.build('LAY_demo1', {
@@ -19,13 +20,13 @@ layui.use('layedit', function () {
     //编辑器外部操作
     var active = {
         content: function () {
-            layer.msg(layedit.getContent(index)); //获取编辑器内容
+            alert(layedit.getContent(index)); //获取编辑器内容
         }
         , text: function () {
-            layer.msg(layedit.getText(index)); //获取编辑器纯文本内容
+            alert(layedit.getText(index)); //获取编辑器纯文本内容
         }
         , selection: function () {
-            layer.msg(layedit.getSelection(index));
+            alert(layedit.getSelection(index));
         }
     };
 
@@ -37,21 +38,15 @@ layui.use('layedit', function () {
     $('.j-send-msg').click(function () {
         var content = layedit.getContent(index);
         dscmallKefu.message.msg = content;
-        // dscmallKefu.message.msg = dscmallKefu.message.msg.replace(/(<p>)*(<\/p>)*(<br>)*(<\/br>)*/g, '')
         dscmallEvent.sendEnterMsg();
     });
 
     $('#LAY_layedit_1').contents().keydown(function (event) {
         switch (event.keyCode) {
             case 13 :
-                // ctr+Enter 快捷发送
-                if (event.ctrlKey && event.keyCode == 13) {
-                    event.preventDefault();
-                    // dscmallKefu.message.msg = layedit.getContent(index).replace(/(<p>)*(<\/p>)*(<br>)*(<\/br>)*/g, '');
-                    var content = layedit.getContent(index);
-                    dscmallKefu.message.msg = content;
-                    dscmallEvent.sendEnterMsg();
-                }
+                event.preventDefault();
+                dscmallKefu.message.msg = layedit.getContent(index);
+                dscmallEvent.sendEnterMsg();
                 break;
             case 116 :
                 event.returnValue = false;
@@ -75,42 +70,8 @@ var dscmallEvent = {
         // 初始化当前客服信息
         this.init_service_data();
 
-
         // 声音
         dscmallEvent.audio = new Audio(audio_path);
-
-    },
-    show_orders : function (uid) {
-        // 显示商家订单
-
-        uid = uid || dscmallKefu.user.store_id;
-
-        $.post(order_list_url, {
-            uid : uid
-        }, function (data) {
-            if (data.code == 0) {
-                $('.j-order-list').find('ul.order-list').css('display', 'block');
-                $('.j-order-list').find('p.no-order-list').css('display', 'none');
-                // 显示订单
-                let order_li = $('.j-order-list').find('ul.order-list li:eq(0)').clone();
-                $('.j-order-list').find('ul.order-list').empty();
-
-                for (let i in data.order_list) {
-                    $(order_li).find('p:first-child span').text(data.order_list[i].order_sn);
-                    $(order_li).find('a.img').attr('href', data.order_list[i].goods_url);
-                    $(order_li).find('img').attr('src', data.order_list[i].goods_thumb);
-                    $(order_li).find('dt a').attr('href', data.order_list[i].goods_url);
-                    $(order_li).find('dt a').text(data.order_list[i].goods_name);
-                    $(order_li).find('dd.price').text(data.order_list[i].order_amount);
-                    $('.j-order-list').find('ul.order-list').append($(order_li).clone());
-                }
-
-            }else{
-                $('.j-order-list').find('ul.order-list').css('display', 'none');
-                $('.j-order-list').find('p.no-order-list').css('display', 'block');
-            }
-
-        }, 'json');
 
     },
     chat_history_list : function () {
@@ -173,6 +134,24 @@ var dscmallEvent = {
         }
 
         dscmallEvent.vueobj.change_service(dscmallEvent.vueobj.current_target);
+
+        //
+        //this.vueobj.service_list[data.service_id] = {
+        //    add_time: dscmallKefu.SystemDate(),
+        //    count : 1,
+        //    isShow : 1,
+        //    message : data.msg,
+        //    ru_id : data.ru_id,
+        //    service_id : data.service_id,
+        //    shop_name : data.name,
+        //    thumb : data.avatar
+        //};
+        //
+        //this.vueobj.service_list_chat_data[data.service_id] = {
+        //    chat : [],
+        //    count : 0,
+        //    goods : {}
+        //};
 
     },
     service_list_chat_data : function (service_id){
@@ -286,21 +265,6 @@ var dscmallEvent = {
         dscmallKefu.message.store_id = dscmallEvent.target_service.store_id;
         dscmallKefu.message.goods_id = dscmallKefu.user.goods_id;
         dscmallKefu.message.origin = dscmallKefu.come_form;
-        // 处理消息接口
-        if (dscmallKefu.message.msg == '' || dscmallKefu.message.msg == null ) {
-            return false;
-        }
-        var regex = /<(?!img|p|\/p).*?>/ig; // 去除所有html标签 且保留img p标签
-        dscmallKefu.message.msg = dscmallKefu.message.msg.replace(regex, "");
-        $.ajax({
-            url: transMessage_api,
-            data: {message: dscmallKefu.message.msg},
-            async: false,
-            type: 'post',
-            success: function (res) {
-                dscmallKefu.message.msg = res;
-            }
-        });
         dscmallKefu.sendmsg();
         $('#LAY_layedit_1').contents().find('body').html("");
         $('#LAY_layedit_1').contents().find('body').focus();
@@ -346,13 +310,10 @@ var dscmallEvent = {
                         uid: service_id,
                         store_id : (event == undefined) ? dscmallKefu.user.store_id : event.currentTarget.getAttribute("data-ruid")
                     };
-
-                    // 切换商家订单
-                    dscmallEvent.show_orders( dscmallEvent.target_service.store_id );
                 },
                 get_more_msg : function () {
                     // 查看更多消息
-                    let page = (this.chat_data_page_list[this.current_target] || 1);
+                    let page = (this.chat_data_page_list[this.current_target] || 0);
                     if ( page < 0 )
                         return;
 
@@ -386,27 +347,16 @@ var dscmallEvent = {
                     })
                 },
                 service_list_computer : function () {
-                    // 左侧消息显示
+
                     return this.service_list.filter(function (list) {
-                        console.log(list.message)
-                        if (!list.message || list.message == undefined) return '';
-                        if (list.message.indexOf('new_message_list') !== -1) {
-                            // var regex = /<a href=\'(.*?)\'/i;
-                            var regex = /<a\b[^>]+\bhref="([^"]*)"[^>]*>/i;
-                            // console.log(list.message)
-                            // console.log(regex.exec(list.message))
-                            list.message = regex.exec(list.message)[1]; // 图文仅显示链接
-                        } else {
-                            list.message = list.message.replace(/<img.*?(?:>|\/>)/gi, '[图片]');
-                        }
-                        // console.log(list.message)
+                        list.message = list.message.replace(/<img\b[^>]*src\s*=\s*"[^>"]*\.(?:png|jpg|bmp|gif)"[^>]*>/, '[图片]');
                         return true;
                     });
                 }
             },
             filters : {
                 filter_shop_name : function (value) {
-                    if (!value) return '';
+                    if (!value) return ''
                     value = value.toString();
                     return value.indexOf("自营") > 0 ? "自营" : "店铺"
                 },
@@ -537,59 +487,6 @@ var dscmallEvent = {
             // 第一个回调
             window.location.reload(true);
         });
-    },
-    switch_service: function (data) {
-
-        console.log(data)
-
-        //切换客服
-        if(data.store_id == dscmallKefu.user.store_id && dscmallEvent.target_service.uid == data.fid){
-            dscmallEvent.target_service.uid = data.sid;
-        }
-
-        // 客服接入
-        // if ( this.vueobj.current_target == data.service_id ||  this.vueobj.current_target == 0 ) {
-        //     dscmallEvent.target_service.uid = data.service_id;
-        //     this.vueobj.current_target = data.service_id;
-        // }
-
-        // 合并 客服列表
-        // for (let i in this.vueobj.service_list) {
-
-        //     if ( this.vueobj.service_list[i].ru_id == data.store_id &&
-        //         (this.vueobj.service_list[i].service_id === 0 || this.vueobj.service_list[i].service_id === "0")
-        //     ) {
-
-        //         dscmallEvent.add_message({
-        //             avatar : this.vueobj.service_list[i].avatar,
-        //             from_id : data.service_id,
-        //             message : this.vueobj.service_list[i].message,
-        //             message_type : '',
-        //             msg : this.vueobj.service_list[i].message,
-        //             name : dscmallKefu.user.user_name,
-        //             service_id : data.service_id,
-        //             store_id : this.vueobj.service_list[i].ru_id,
-        //             time : this.vueobj.service_list[i].add_time,
-        //         }, 1);
-
-        //         delete this.vueobj.service_list[i];
-        //         delete this.vueobj.service_list_chat_data[i];
-        //         break;
-        //     }
-        // }
-
-        /**
-         * 将消息添加到页面
-         */
-        date.avatar = dscmallKefu.user.store_logo;
-        date.name = dscmallKefu.user.store_name;
-        data.message = data.msg;
-        data.from_id = data.service_id;
-        data.time = dscmallKefu.SystemDate();
-        if (data.message) {
-            dscmallEvent.add_message(data, 2);
-        }
-
     }
 
 };

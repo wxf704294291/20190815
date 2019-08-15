@@ -35,13 +35,12 @@ del{color:#aaa;font-size:1.3rem}
 .box-flex{width:60%;float:left;text-align: center;line-height:4rem;font-size:2rem;}
 .content-box{width:100%;}
 .content-box ul li{padding:0.5rem 1rem;overflow: hidden;border-bottom:1px solid #ececec;}
-.content-box .chat-left{width:15%;float:left;}
+.content-box .chat-left{width:20%;float:left;}
 .content-box .chat-center{width:60%;float:left;padding-left:1rem;box-sizing:border-box;}
-.content-box .chat-right{width:25%;float:left;}
+.content-box .chat-right{width:20%;float:left;}
 .content-box .chat-left img{width:100%;height:100%;border-radius: 3px;}
 .chat-title{font-size:1.6rem;color:#000;line-height: 1.5rem;margin-bottom:0.5rem;}
 .chat-info{font-size:1.2rem;color:#999;line-height: 1.5rem;}
-.chat-info img {width:25%;height:auto;}
 .chat-right span{display:block;text-align: right;line-height:1.6rem;font-size: 1.6rem;color:#999;}
 .clamp{overflow: hidden;text-overflow:ellipsis;display: -webkit-box;-webkit-box-orient:vertical;}
 .clamp1{-webkit-line-clamp:1;}
@@ -58,8 +57,8 @@ del{color:#aaa;font-size:1.3rem}
 .cons-admin {color: #666;font-size: 1.2rem;}
 .cons-admin b{margin-right:0.5rem;}
 .m-top04 {margin-top: .4rem;}
-.cons-cont, .cons-cont-1 {border-radius: 0.5rem;padding:0.5rem;word-break: break-all;font-size: 1.4rem;/*position: relative;*/ float: right;}
-.cons-cont {background: #f1cdcea3;color: #000;}
+.cons-cont, .cons-cont-1 {border-radius: 0.5rem;padding:0.8rem 1rem;word-break: break-all;font-size: 1.4rem;position: relative;}
+.cons-cont {background: #1CBB7F;color: #fff;}
 .cons-cont-1 {background: #e7e8ef;color: #333;}
 .cons-cont:before, .cons-cont-1:after {content: " ";display: block;position: absolute;width: .6rem;height: .6rem;top: 1.1rem;transform: rotate(45deg);-ms-transform: rotate(45deg);-webkit-transform: rotate(45deg);-o-transform: rotate(45deg);-moz-transform: rotate(45deg);}
 .cons-cont:before {left: -.3rem;background: #1CBB7F;}
@@ -67,16 +66,6 @@ del{color:#aaa;font-size:1.3rem}
 .consult-filter-btn {
     background: #f7f7f7;
 }
-
-/*-----------用户端(H5)商品消息样式-------*/
-.cons-list .text .new_message_list { display:block;float: left;}
-.cons-list .text a { color: #3a63c2;}
-.cons-list .text .new_message_list a { color: #333;}
-.cons-list .text .new_message_list img { border: 1px solid #eff0f5;padding: 5px;display: block;width: 54px;height: 54px;float: left;}
-.cons-list .text .new_message_list .left_goods_info {margin-top: 5px;margin-left: 10px;float: left;width: 75%;}
-.cons-list .text .new_message_list .left_goods_info h4 {margin-bottom:5px;}
-.cons-list .text .new_message_list .left_goods_info span {color:#f93d5d}
-
 .filter-btn {
     padding:0.5rem 0;
     margin: 0 auto;
@@ -108,9 +97,7 @@ del{color:#aaa;font-size:1.3rem}
 .layui-layedit-tool .layui-icon{margin:0;}
 
 
-/*表情框样式*/
 .qqFace { margin-top: 4px; background: #fff; border-top: 1px #dfe6f6 solid; }
-#facebox table tr {height: 2.5rem}
 textarea{border:none;}
 .fa.fa-image{display:block;float:right;margin-top:0.4rem;/*position:absolute;bottom:1.1rem;left:4rem;*/}
 .send{right:1rem;display:block;background:#00a2d4;text-align:center;line-height:1rem;font-size:1.3rem;color:#fff;border:none;bottom:0.3rem;padding:1rem;border-radius: 0.5rem;}
@@ -136,7 +123,6 @@ body{height:100vh}
     padding:1rem 0;
     font-size:1.2rem;
     color:#00a2d4;
-    /*background: #f2f2f2;*/
 }
 #tank .user-consult{
     overflow:hidden;

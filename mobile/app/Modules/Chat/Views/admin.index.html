@@ -74,7 +74,7 @@
         </div>
         <div class="warp-con">
             <div class="warp-con-product jw-goods-info">
-                <img src="/" alt="">
+                <img src="" alt="">
                 <a target="_blank">
                     <div class="warp-con-product-text">
                         <h4></h4>
@@ -846,7 +846,7 @@
             var goods_url = current_user.goods.url || "{$root_path}/goods.php?id=" + dscmallEvent.target_service.goods_id;
             $('.jw-user-window').find('#customer_name').text(current_user.name);
             $('.jw-user-window').find('#come_from').text(current_user.origin);
-            $('.jw-user-window').find('.jw-goods-info img').attr('src', ( '/'+current_user.goods.pic || '/'+current_user.goods.goods_thumb ));
+            $('.jw-user-window').find('.jw-goods-info img').attr('src', ( current_user.goods.pic || current_user.goods.goods_thumb ));
             $('.jw-user-window').find('.jw-goods-info h4').text(current_user.goods.goods_name);
             $('.jw-user-window').find('.jw-goods-info .price').text(current_user.goods.price);
             $('.jw-user-window').find('.jw-goods-info a').attr('href', goods_url);

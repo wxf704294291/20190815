@@ -1,19 +1,24 @@
 <?php
-//WEBSC商城资源
+
 namespace App\Console;
 
-class Kernel extends \Laravel\Lumen\Console\Kernel
+use Illuminate\Console\Scheduling\Schedule;
+use Laravel\Lumen\Console\Kernel as ConsoleKernel;
+
+
+class Kernel extends ConsoleKernel
 {
-	/**
-     * The Artisan commands provided by your application.
-     *
-     * @var array
-     */
-	protected $commands = array('App\\Console\\Commands\\CustomerService', 'App\\Console\\Commands\\ProjectRelease', 'App\\Console\\Commands\\RestoreController', 'App\\Console\\Commands\\RestoreModels');
+    
+    protected $commands = [
+        Commands\CustomerService::class,
+        Commands\ProjectRelease::class,
+        Commands\RestoreController::class,
+        Commands\RestoreModels::class,
+    ];
 
-	protected function schedule(\Illuminate\Console\Scheduling\Schedule $schedule)
-	{
-	}
+    
+    protected function schedule(Schedule $schedule)
+    {
+        
+    }
 }
-
-?>
