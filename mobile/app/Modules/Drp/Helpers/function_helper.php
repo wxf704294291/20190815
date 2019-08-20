@@ -239,7 +239,7 @@ function get_goods($goods, $warehouse_id = 0, $area_id = 0, $size = 10, $page = 
         }
     }
     $leftJoin = '';
-            start
+    //ecmoban模板堂 --zhuo start
     $shop_price = "wg.warehouse_price, wg.warehouse_promote_price, wag.region_price, wag.region_promote_price, g.model_price, g.model_attr, ";
     $leftJoin .= " left join " .$GLOBALS['ecs']->table('warehouse_goods'). " as wg on g.goods_id = wg.goods_id and wg.region_id = '$warehouse_id' ";
     $leftJoin .= " left join " .$GLOBALS['ecs']->table('warehouse_area_goods'). " as wag on g.goods_id = wag.goods_id and wag.region_id = '$area_id' ";
@@ -247,8 +247,8 @@ function get_goods($goods, $warehouse_id = 0, $area_id = 0, $size = 10, $page = 
         $leftJoin .= " left join " .$GLOBALS['ecs']->table('link_area_goods'). " as lag on g.goods_id = lag.goods_id ";
         $where .= " and lag.region_id = '$area_id' ";
     }
-            end
-            start
+    //ecmoban模板堂 --zhuo end
+    //ecmoban模板堂 --zhuo start
     if ($GLOBALS['_CFG']['review_goods'] == 1) {
         $where .= ' AND g.review_status > 2 ';
     }
@@ -259,7 +259,7 @@ function get_goods($goods, $warehouse_id = 0, $area_id = 0, $size = 10, $page = 
     if ($sort == 'last_update') {
         $sort ='g.last_update';
     }
-            end
+    //ecmoban模板堂 --zhuo end
     /* 获得商品列表 */
     $sql = 'SELECT g.goods_id,g.dis_commission, g.user_id, g.goods_name, ' .$shop_price. ' g.goods_name_style, g.comments_number,g.sales_volume,g.market_price, g.is_new, g.is_best, g.is_hot, ' .
         ' IF(g.model_price < 1, g.goods_number, IF(g.model_price < 2, wg.region_number, wag.region_number)) AS goods_number, ' .
@@ -341,7 +341,7 @@ function get_goods($goods, $warehouse_id = 0, $area_id = 0, $size = 10, $page = 
         $arr[$row['goods_id']]['goods_img']        = get_image_path($row['goods_img']);
         $arr[$row['goods_id']]['url']              = build_uri('goods', ['gid'=>$row['goods_id']], $row['goods_name']);
 
-                start
+        //ecmoban模板堂 --zhuo start
         if ($row['model_attr'] == 1) {
             $table_products = "products_warehouse";
             $type_files = " and warehouse_id = '$warehouse_id'";
@@ -378,7 +378,7 @@ function get_goods($goods, $warehouse_id = 0, $area_id = 0, $size = 10, $page = 
         $mc_four = ments_count_rank_num($row['goods_id'], 4);        //四颗星
         $mc_five = ments_count_rank_num($row['goods_id'], 5);        //五颗星
         $arr[$row['goods_id']]['zconments'] = get_conments_stars($mc_all, $mc_one, $mc_two, $mc_three, $mc_four, $mc_five);
-                end
+        //ecmoban模板堂 --zhuo end
     }
 
     return ['list'=>array_values($arr), 'totalpage'=>ceil($total/$size)];
