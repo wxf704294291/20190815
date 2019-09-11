@@ -26,11 +26,9 @@ var {$key} = "{$item}";
         <div class="w w1200">
             <div class="logo">
                 <div class="logoImg"><a href="./index.php" class="logo">{if $user_login_logo}<img src="{$user_login_logo}" />{/if}</a></div>
-				<!-----
                 <div class="logo-span">
                     {if $login_logo_pic}<b style="background:url({$login_logo_pic}) no-repeat;"></b>{/if}
                 </div>
-				---->
             </div>
             <div class="header-href">
             {if $shop_reg_closed neq 1}
@@ -106,11 +104,9 @@ var {$key} = "{$item}";
         <div class="w w1200">
             <div class="logo">
                 <div class="logoImg"><a href="./index.php" class="logo">{if $user_login_logo}<img src="{$user_login_logo}" />{/if}</a></div>
-                <!---
-				<div class="logo-span">
+                <div class="logo-span">
                     {if $login_logo_pic}<b style="background:url({$login_logo_pic}) no-repeat;"></b>{/if}
                 </div>
-				--->
             </div>
             <div class="header-href">
                 <span>{$lang.label_registered}<a href="user.php" class="jump">{$lang.login_here}</a></span>
@@ -149,6 +145,19 @@ var {$key} = "{$item}";
                                 </div>
                                 <div class="input-tip"></div>
                             </div>
+							
+							<!-- {if $enabled_captcha} 判断是否启用验证码-->
+                            <div class="item">
+                                <div class="item-label">{$lang.Code_bind}</div>
+                                <div class="item-info">
+                                    <input type="text" id="captcha" name="captcha" class="text text-2 fl" value="" autocomplete="off" />
+                                    <img src="captcha_verify.php?captcha=is_register_phone&{$rand}" class="captcha_img fl" onClick="this.src='captcha_verify.php?captcha=is_register_phone&'+Math.random()">
+                                </div>
+                                <div class="input-tip"></div>
+                            </div>
+                            <!--{/if}-->
+							
+							
                             <div class="item" id="phone_yz">
                                 <div class="item-label">{$lang.bind_phone}</div>
                                 <div class="item-info">
@@ -165,7 +174,7 @@ var {$key} = "{$item}";
                                 </div>
                                 <div class="input-tip"></div>
                             </div>
-                            
+							
                             <!-- {foreach from=$extend_info_list item=field} -->
                             <!-- {if $field.id eq 6} -->
                             <div class="item" style="overflow:visible;">
@@ -208,7 +217,7 @@ var {$key} = "{$item}";
                                 <div class="item-label">{$lang.bindMobile_code}</div>
                                 <div class="item-info">
                                     <input type="text" id="sms" name="mobile_code" class="text text-2" value="" autocomplete="off" />
-                                    <a href="javascript:sendSms();" id="zphone" class="sms-btn" style="color:#F1F2F4">{$lang.getMobile_code}</a>
+                                    <a href="javascript:sendSms();" id="zphone" class="sms-btn">{$lang.getMobile_code}</a>
                                 </div>
                                 <div class="input-tip"><label id="phone_notice"></label></div>
                             </div>
@@ -222,18 +231,7 @@ var {$key} = "{$item}";
                                 </div>
                                 <div class="input-tip"></div>
                             </div>
-                            
-                            <!-- {if $enabled_captcha} 判断是否启用验证码-->
-                            <div class="item">
-                                <div class="item-label">{$lang.Code_bind}</div>
-                                <div class="item-info">
-                                    <input type="text" id="captcha" name="captcha" class="text text-2 fl" value="" autocomplete="off" />
-                                    <img src="captcha_verify.php?captcha=is_register_phone&{$rand}" class="captcha_img fl" onClick="this.src='captcha_verify.php?captcha=is_register_phone&'+Math.random()">
-                                </div>
-                                <div class="input-tip"></div>
-                            </div>
-                            <!--{/if}-->
-                            
+							
                             <div class="item item2">
                                 <div class="item-checkbox">
                                     <input type="checkbox" id="clause2" class="ui-solid-checkbox" checked="checked" value="1" name="mobileagreement">
@@ -269,11 +267,9 @@ var {$key} = "{$item}";
         <div class="w w1200">
             <div class="logo">
                 <div class="logoImg"><a href="./index.php" class="logo">{if $user_login_logo}<img src="{$user_login_logo}" />{/if}</a></div>
-				<!---
                 <div class="logo-span">
                     {if $login_logo_pic}<b style="background:url({$login_logo_pic}) no-repeat;"></b>{/if}
                 </div>
-				---->
             </div>
             <div class="header-href">
                 <span>{$lang.label_registered}<a href="user.php" class="jump">{$lang.login_here}</a></span>
@@ -439,11 +435,9 @@ var {$key} = "{$item}";
         <div class="w w1200">
             <div class="logo">
                 <div class="logoImg"><a href="./index.php" class="logo">{if $user_login_logo}<img src="{$user_login_logo}" />{/if}</a></div>
-                <!---
-				<div class="logo-span">
+                <div class="logo-span">
                     {if $login_logo_pic}<b style="background:url({$login_logo_pic}) no-repeat;"></b>{/if}
                 </div>
-				--->
             </div>
             <div class="header-href">
                 <span>{$lang.label_registered}<a href="user.php" class="jump">{$lang.login_here}</a></span>
