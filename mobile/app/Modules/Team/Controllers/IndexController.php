@@ -298,7 +298,7 @@ class IndexController extends FrontendController
         $this->order = in_array($goods_order, $order_array) ? $goods_order : $default_sort_order_method;
         $this->display = in_array($goods_display, $display_array) ? $goods_display : (isset($_COOKIE['ECS']['display']) ? $_COOKIE['ECS']['display'] : $default_display_type);
         cookie('ECS[display]', $this->display);
-                start
+        //ecmoban模板堂 --zhuo start
         $sql = "select parent_id from " . $this->ecs->table('category') . " where cat_id = '$this->cat_id'";
         $parent_id = $this->db->getOne($sql);
         $sql = "select parent_id from " . $this->ecs->table('category') . " where cat_id = '$parent_id'";
@@ -315,7 +315,7 @@ class IndexController extends FrontendController
         if (isset($_COOKIE['region_id']) && !empty($_COOKIE['region_id'])) {
             $this->region_id = $_COOKIE['region_id'];
         }
-                end
+        //ecmoban模板堂 --zhuo end
         //$this->children = get_children($this->cat_id);
         // 获得分类的相关信息
         //$this->cat = get_cat_info($this->cat_id);
@@ -323,7 +323,7 @@ class IndexController extends FrontendController
         if ($this->cat['grade'] == 0 && $this->cat['parent_id'] != 0) {
             $this->cat['grade'] = get_parent_grade($this->cat_id); //如果当前分类级别为空，取最近的上级分类
         }
-                start
+        //ecmoban模板堂 --zhuo start
         $leftJoin = '';
 
         $tag_where = '';
@@ -332,7 +332,7 @@ class IndexController extends FrontendController
             $tag_where = " and lag.region_id = '$this->area_id' ";
         }
 
-                end
+        //ecmoban模板堂 --zhuo end
         if ($this->cat['grade'] > 1) {
             /* 需要价格分级 */
 
@@ -363,11 +363,11 @@ class IndexController extends FrontendController
                     当价格=最大值时，分级会多出来，已被证明存在
              */
 
-                    start
+            //ecmoban模板堂 --zhuo start
             $mm_shop_price = "wg.warehouse_price, wg.warehouse_promote_price, wag.region_price, wag.region_promote_price, g.model_price, g.model_attr ";
             $leftJoin .= " left join " . $this->ecs->table('warehouse_goods') . " as wg on g.goods_id = wg.goods_id and wg.region_id = '$region_id' ";
             $leftJoin .= " left join " . $this->ecs->table('warehouse_area_goods') . " as wag on g.goods_id = wag.goods_id and wag.region_id = '$this->area_id' ";
-                    end
+            //ecmoban模板堂 --zhuo end
 
             $sql = "SELECT min(IF(g.model_price < 1, g.shop_price, IF(g.model_price < 2, wg.warehouse_price, wag.region_price))) AS min, " .
                 " max(IF(g.model_price < 1, g.shop_price, IF(g.model_price < 2, wg.warehouse_price, wag.region_price))) as max " .
@@ -511,7 +511,7 @@ class IndexController extends FrontendController
                     $all_attr_list[$key]['filter_attr_name'] = $attributeInfo['attr_name'];
                     $all_attr_list[$key]['attr_cat_type'] = $attributeInfo['attr_cat_type'];
 
-                    $all_attr_list[$key]['filter_attr_id'] = $value;        
+                    $all_attr_list[$key]['filter_attr_id'] = $value; //by zhang
 
                     $sql = "SELECT a.attr_id, MIN(a.goods_attr_id ) AS goods_id, a.attr_value AS attr_value, a.color_value FROM " . $this->ecs->table('goods_attr') . " AS a, " . $this->ecs->table('goods') .
                         " AS g" .

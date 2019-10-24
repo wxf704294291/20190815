@@ -34,8 +34,7 @@ else {
 	else {
 		$plugin_file = 'includes/modules/payment/' . $pay_code . '.php';
 
-		//if (file_exists($plugin_file)) {
-		if (file_exists(ROOT_PATH.$plugin_file)) {
+		if (file_exists($plugin_file)) {
 			include_once $plugin_file;
 			$payment = new $pay_code();
 			$msg = (@$payment->respond() ? $_LANG['pay_success'] : $_LANG['pay_fail']);

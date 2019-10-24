@@ -22,6 +22,7 @@
 	<div class="w w1200">
         <div class="software_list">
 		    <ul id="software_title">
+			   <li>序&nbsp;&nbsp;&nbsp;&nbsp;号</li>
 			   <li>软件名称</li>
 			   <li>软件版本号</li>
 			   <li>软件大小</li>
@@ -32,16 +33,17 @@
         	<table cellpadding="10px" cellspacing="0" frame="above">
 			   {foreach from=$software_list item=software}
 				<tr>
-				   <td width="16%" style="border-bottom:#808080 solid 1px;">{$software.software_name}</td>
-				   <td width="16%" style="border-bottom:#808080 solid 1px;">{$software.software_version}</td>
-				   <td width="16%" style="border-bottom:#808080 solid 1px;">{$software.software_size}</td>
-				   <td width="16%" style="border-bottom:#808080 solid 1px;">{$software.create_time}</td>
-				   <td width="17%" style="border-bottom:#808080 solid 1px;">
+				   <td width="14%" style="border-bottom:#808080 solid 1px;">[{$software.sort_number}]</td>
+				   <td width="14%" style="border-bottom:#808080 solid 1px;">{$software.software_name}</td>
+				   <td width="14%" style="border-bottom:#808080 solid 1px;">{$software.software_version}</td>
+				   <td width="14%" style="border-bottom:#808080 solid 1px;">{$software.software_size}</td>
+				   <td width="14%" style="border-bottom:#808080 solid 1px;">{$software.create_time}</td>
+				   <td width="14%" style="border-bottom:#808080 solid 1px;">
 					   <div>
 						  <a style="color:#2d3947;" href="{$software.software_article_link}" onclick="getHrefValue()">查看详情</a>
 					   </div>
 				   </td>
-				   <td width="17%" style="border-bottom:#808080 solid 1px;">
+				   <td width="14%" style="border-bottom:#808080 solid 1px;">
 					   <div>
 						  <a style="color:#2d3947;" href="javascript:void(0)" onclick="getDownloadLink(event)">下载</a>  
 						  <input type="hidden" name="software_download_link" value="{$software.software_id}">

@@ -19,7 +19,19 @@
 <div class="wrapper">
 	<div class="boxCenterList RelaArticle" align="center">
       <div style="margin:158px auto;">
-      <p style="font-size:14px; font-weight:bold; color: red; margin-bottom:10px;">{$message}</p>
+      <div style="text-align:center">
+	    <!--{if $message=="支付成功!"}-->
+	    <img src="../images/success.png" width="80px" height="80px";>
+	    <p style="font-size:24px; font-weight:bold; color: red; margin-bottom:10px;">{$message}</p>
+		<p><a href="/user.html">进入个人中心</a></p><br>
+		<!--{/if}-->
+		<!--{if $message=="支付失败！"}-->
+		<img src="../images/error.png" width="80px" height="80px";>
+	    <p style="font-size:24px; font-weight:bold; color: red; margin-bottom:10px;">{$message}</p>
+		<p><a href="/products.html">返回商城</a></p><br>
+		<!--{/if}-->
+		
+	  </div>
         <!--{if $virtual_card}-->
         <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
         <!--{foreach from=$virtual_card item=vgoods}-->

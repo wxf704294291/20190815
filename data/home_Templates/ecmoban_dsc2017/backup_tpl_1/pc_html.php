@@ -1,13 +1,14 @@
 
                                         
-<div class="content" style="min-height: 944px; background-color: transparent;"><div class="visual-item" style="display: block;" ectype="visualItme" data-length="5" data-li="1" data-purebox="adv" data-mode="lunbo" data-diff="0">
+<div class="content" style="min-height: 969px; background-color: transparent;"><div class="visual-item" style="display: block;" ectype="visualItme" data-length="5" data-li="1" data-purebox="adv" data-mode="lunbo" data-diff="0">
                                     
                                     <div class="view">
                                         <div class="banner home-banner">
                                         	<div class="bd">
-                                            	<ul data-type="range" data-slide="roll">	    <li style="background-position: center; background-image: url(&quot;http://localhost/data/gallery_album/2/original_img/1560704816689378470.jpg&quot;); background-repeat: no-repeat;"><div class="banner-width"><a style="height: 582px;" href="" target="_self"></a></div></li>
-    	    <li style="background-position: center; background-image: url(&quot;http://localhost/data/gallery_album/2/original_img/1560704839181201143.jpg&quot;); background-repeat: no-repeat;"><div class="banner-width"><a style="height: 582px;" href="" target="_self"></a></div></li>
-    	    <li style="background-position: center; background-image: url(&quot;http://localhost/data/gallery_album/2/original_img/1560704847139374103.jpg&quot;); background-repeat: no-repeat;"><div class="banner-width"><a style="height: 582px;" href="" target="_self"></a></div></li>
+                                            	<ul data-type="range" data-slide="roll">	    <li style="background-image:url(http://flyobd.com/data/gallery_album/1/original_img/1566322310290313242.jpg); background-position: center center;  background-repeat: no-repeat; background-color:;"><div class="banner-width"><a href="#" target="_self" style="height:582px;"></a></div></li>
+    	    <li style="background-image:url(http://flyobd.com/data/gallery_album/1/original_img/1566322506498905953.jpg); background-position: center center;  background-repeat: no-repeat; background-color:;"><div class="banner-width"><a href="/about_us.html" target="_self" style="height:582px;"></a></div></li>
+    	    <li style="background-image:url(http://flyobd.com/data/gallery_album/1/original_img/1566322513057303142.jpg); background-position: center center;  background-repeat: no-repeat; background-color:;"><div class="banner-width"><a href="/products.html" target="_self" style="height:582px;"></a></div></li>
+    	    <li style="background-image:url(http://flyobd.com/data/gallery_album/1/original_img/1566322519000261385.jpg); background-position: center center;  background-repeat: no-repeat; background-color:;"><div class="banner-width"><a href="/merchants.html" target="_self" style="height:582px;"></a></div></li>
     
 </ul><div class="spec" data-spec=""></div>
                                             </div>
@@ -99,7 +100,7 @@
                                     <div class="view">
                                         <div class="floor-content" data-type="range" id="homeFloorSix_1" data-lift="新品上市">
 <!-- 楼层六 -->    
-<div class="floor-line-con floorSix floor-color-type-1" data-idx="1" id="floor_module_1" ectype="floorItem">
+<div class="floor-line-con floorSix floor-color-type-4" data-idx="1" id="floor_module_1" ectype="floorItem">
     <div class="floor-hd" ectype="floorTit">
         <div class="hd-tit"><i class="icon"></i>新品上市</div>        <div class="hd-tags">
             <ul>
@@ -139,7 +140,7 @@
                     </div>
                 </div>
                                 <div class="f-r-main" ectype="floor_cat_<br ></div>
-<b>Warning</b>:  Illegal string offset 'cat_id' in <b>D:\phpStudy\www\temp\compiled\admin\dialog.lbi.php</b> on line <b>2700</b><br />
+<b>Warning</b>:  Illegal string offset 'cat_id' in <b>/www/wwwroot/weshop/temp/compiled/admin/dialog.lbi.php</b> on line <b>2700</b><br />
 ">
                     <ul class="p-list"></ul>
                 </div>
@@ -150,12 +151,28 @@
 </div>
 <div class="spec" data-spec="" data-title="undefined"></div></div>
                                     </div>
-                                </div><div class="visual-item" style="display: block; position: relative; opacity: 1;" ectype="visualItme" data-purebox="cust" data-mode="custom" data-diff="0">
+                                </div><div class="visual-item" style="display: block; position: relative; opacity: 1; left: 0px; top: 0px;" ectype="visualItme" data-purebox="cust" data-mode="custom" data-diff="0">
                                     
                                     <div class="view" style="margin: 0px auto; width: 1200px;">
-                                        <div class="custom" id="custom_0" data-type="range" data-lift="公司简介"><div style="margin-right: 28px; float: left;"><iframe src="https://v.qq.com/txp/iframe/player.html?vid=y0711v77egh" allowfullscreen="true" style="width: 579px; height: 470px;" width="600" height="400" frameborder="10px"></iframe></div><div style="width: 556px; height: 250px; float: left;"><h1 style="margin: 0px 0px 20px; padding: 0px 4px 0px 0px; text-align: center; font-size: 32px; font-weight: bold;">公司简介</h1><p style="margin: 15px; color: rgb(102, 102, 102); font-size: 16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-family: 微软雅黑,Microsoft YaHei;">深圳市硕泰昌科技有限公司(简称“硕泰昌科技”)成立于2012年，是一家汽车诊断仪、汽车编程器、汽车防盗器等OBD设备制造商、云诊断平台以及汽车车载系统解决方案提供商。硕泰昌科技创办至今，凭借雄厚的研发实力打造出的产品深受汽修维修师傅喜爱并获得良好口碑。在未来我司将继续深耕OBD行业，为汽修维修师傅提供物美价廉好用又好使的良心产品。
- &nbsp; &nbsp;</span>
- &nbsp; &nbsp;</p><p style="margin: 15px; color: rgb(102, 102, 102); font-size: 16px;"><span style="font-family: 微软雅黑,Microsoft YaHei;">&nbsp;&nbsp;&nbsp;&nbsp;与此同时，我司将与时俱进潜心研发云诊断平台，利用互联网思维整合资源，利用物联网、大数据以及人工智能技术让云诊断变得“更智能，更懂你”。</span>
- &nbsp; &nbsp;</p><p style="margin: 15px; color: rgb(102, 102, 102); font-size: 16px;"><span style="font-family: 微软雅黑,Microsoft YaHei;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;硕泰昌科技始终坚持“良心产品，匠心打造”产品研发思路，以客户为中心为服务宗旨，以开放、包容、公平、共赢为合作基础。相信梦想，相信未来!!!<br><br></span> <br></p><p style="margin: 15px; color: rgb(102, 102, 102); font-size: 16px;">&nbsp;&nbsp; <br></p></div><p>&nbsp;</p></div>
+                                        <div class="custom" id="custom_0" data-type="range" data-lift="公司简介"><div style="margin-right: 28px; float: left;">
+    &lt;<iframe frameborder="1" src="https://v.qq.com/txp/iframe/player.html?vid=u0925ijbx71" allowfullscreen="true" width="588px" height="486px" scrolling="no" autoplay="autoplay" align="left"></iframe>
+</div>
+<p style="margin: 15px; color: rgb(102, 102, 102); font-size: 16px; text-indent: 2em;" dir="ltr">
+    <span style="color: rgb(102, 102, 102); font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">深圳市硕泰昌科技有限公司(简称“硕泰昌科技”)成立于2012年，是一家汽车诊断仪、汽车编程器、汽车防盗器等OBD设备制造商、云诊断平台以及汽车车载系统解决方案提供商。硕泰昌科技创办至今，凭借雄厚的研发实力打造出的产品深受汽修维修师傅喜爱并获得良好口碑。在未来我司将继续深耕OBD行业，为汽修维修师傅提供物美价廉好用又好使的良心产品。
+ &nbsp; &nbsp;</span><span style="color: rgb(102, 102, 102);">&nbsp; &nbsp; &nbsp;</span>
+ &nbsp;
+</p>
+<p style="margin: 15px; color: rgb(102, 102, 102); font-size: 16px; text-indent: 2em;" dir="ltr">
+    <span style="font-family: 微软雅黑,Microsoft YaHei;">与此同时，我司将与时俱进潜心研发云诊断平台，利用互联网思维整合资源，利用物联网、大数据以及人工智能技术让云诊断变得“更智能，更懂你”。</span>
+ &nbsp; &nbsp;
+</p>
+<p style="margin: 15px; color: rgb(102, 102, 102); font-size: 16px; text-indent: 2em;" dir="ltr">
+    <span style="font-family: 微软雅黑,Microsoft YaHei;">硕泰昌科技始终坚持“良心产品，匠心打造”产品研发思路，以客户为中心为服务宗旨，以开放、包容、公平、共赢为合作基础。相信梦想，相信未来!!!<br><br></span> <br>
+ &nbsp; &nbsp;
+</p>
+<p style="margin: 15px; color: rgb(102, 102, 102); font-size: 16px;">
+    &nbsp;&nbsp; <br>
+ &nbsp; &nbsp;
+</p></div>
                                     </div>
                                 </div></div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            

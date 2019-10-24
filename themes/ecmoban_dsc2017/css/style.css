@@ -2487,7 +2487,7 @@ a.browse:hover,a.comment:hover{ color:#0AADCC;}
 .gptabThree li span{ float:left; display:block; padding-left:30px;}
 .gptabThree li .iconfont{ left:8px;}
 
-.gp-tit{ margin-bottom:30px; float:left; width:317px; color:#0AADCC; position:relative; padding-left:25px; font-size:16px; padding-bottom:5px; border-bottom:1px solid #1E4497 ;}
+.gp-tit{ margin-bottom:30px; float:left; width:317px; color:#0AADCC; position:relative; padding-left:25px; font-size:16px; padding-bottom:5px; border-bottom:1px solid #0AADCC ;}
 .gp-tit .iconfont{ left:2px; top:3px; color:#0AADCC;}
 
 .gp-email-up,.gp-end{ text-align:center; font-size:16px; color:#8c8c8c; padding-top:150px;}

@@ -137,7 +137,7 @@ $_LANG['back_up_page'] = '返回上一页';
 $_LANG['back_list'] = '返回列表';
 $_LANG['illegal_operate'] = '非法操作';
 $_LANG['close_window'] = '关闭窗口';
-$_LANG['back_home'] = '返回首页';
+$_LANG['back_home'] = '<a href="/products.html">返回产品中心</a>';
 $_LANG['ur_here'] = '当前位置:';
 $_LANG['all_goods'] = '全部商品';
 $_LANG['all_recommend'] = "全部推荐";
@@ -589,8 +589,8 @@ $_LANG['article_comment'] = '文章评论';
 $_LANG['pay_status'] = '支付状态';
 $_LANG['pay_not_exist'] = '此支付方式不存在或者参数错误！';
 $_LANG['pay_disabled'] = '此支付方式还没有被启用！';
-$_LANG['pay_success'] = '您此次的支付操作已成功！';
-$_LANG['pay_fail'] = '支付操作失败，请返回重试！';
+$_LANG['pay_success'] = '支付成功!';
+$_LANG['pay_fail'] = '支付失败！';
 
 /* 文章部分 */
 $_LANG['new_article'] = '最新文章';

@@ -150,7 +150,7 @@ $_LANG['order_amount'] = '您的应付款金额为';
 $_LANG['go_pay'] = '去支付';
 $_LANG['remember_order_number'] = "感谢您在本店购物！您的订单已提交成功，请记住您的订单号";
 $_LANG['back_home'] = '<a href="/products.html">返回首页</a>';
-$_LANG['goto_user_center'] = '<a href="user.php">用户中心</a>';
+$_LANG['goto_user_center'] = '<a href="user.html">用户中心</a>';
 $_LANG['order_submit_back'] = '您可以 %s 或去 %s';
 
 $_LANG['sms_paid'] = '已付款';

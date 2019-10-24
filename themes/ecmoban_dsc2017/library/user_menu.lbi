@@ -1,6 +1,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 <div class="side-menu">
+    <dl>
+        <dt><i class="square"></i><span>{$lang.account_center}</span></dt>
+		<dd>
+			<p{if $action eq 'bonus'} class="current"{/if}><a href="user.php?act=bonus" target="_self">{$lang.label_bonus}</a></p>
+			{if $use_value_card eq 1}
+			<p{if $action eq 'value_card'} class="current"{/if}><a href="user.php?act=value_card" target="_self">{$lang.label_value_card}</a></p>
+			{/if}
+			<p{if $action eq 'coupons'} class="current"{/if}><a href="user.php?act=coupons" target="_self">{$lang.label_coupons}</a></p>
+			<p{if $action eq 'track_packages'} class="current"{/if}><a href="user.php?act=track_packages" target="_self">{$lang.label_track_packages}</a></p>
+			<p{if $action eq 'account_log' || $action eq 'account_detail' || $action eq 'account_raply' || $action eq 'account_deposit' || $action eq 'act_account'} class="current"{/if}><a href="user.php?act=account_log" target="_self">{$lang.account_log}</a></p>
+			<!-----<p{if $action eq 'baitiao' || $action eq 'repay_bt'} class="current"{/if}><a href="user.php?act=baitiao" target="_self">{$lang.baitiao}</a></p>---->
+        </dd>
+    </dl>
 	<dl>
         <dt><i class="square"></i><span>{$lang.oreder_core}</span></dt>
 		<dd>
@@ -32,19 +45,8 @@
 			{/if}
         </dd>
 	</dl>
-    <dl>
-        <dt><i class="square"></i><span>{$lang.account_center}</span></dt>
-		<dd>
-			<p{if $action eq 'bonus'} class="current"{/if}><a href="user.php?act=bonus" target="_self">{$lang.label_bonus}</a></p>
-			{if $use_value_card eq 1}
-			<p{if $action eq 'value_card'} class="current"{/if}><a href="user.php?act=value_card" target="_self">{$lang.label_value_card}</a></p>
-			{/if}
-			<p{if $action eq 'coupons'} class="current"{/if}><a href="user.php?act=coupons" target="_self">{$lang.label_coupons}</a></p>
-			<p{if $action eq 'track_packages'} class="current"{/if}><a href="user.php?act=track_packages" target="_self">{$lang.label_track_packages}</a></p>
-			<p{if $action eq 'account_log' || $action eq 'account_detail' || $action eq 'account_raply' || $action eq 'account_deposit' || $action eq 'act_account'} class="current"{/if}><a href="user.php?act=account_log" target="_self">{$lang.account_log}</a></p>
-			<p{if $action eq 'baitiao' || $action eq 'repay_bt'} class="current"{/if}><a href="user.php?act=baitiao" target="_self">{$lang.baitiao}</a></p>
-        </dd>
-    </dl>
+    
+	<!-----
 	<dl>
         <dt><i class="square"></i><span>{$lang.activity_center}</span></dt>
 		<dd>
@@ -52,6 +54,7 @@
 			<p{if $action eq 'snatch_list'} class="current"{/if}><a href="user.php?act=snatch_list" target="_self">{$lang.label_snatch}</a></p>
         </dd>
     </dl>
+	----->
     {if $is_merchants > 0}
     <dl>
         <dt><i class="square"></i><span>{$lang.Shop_management}</span></dt>
@@ -61,10 +64,14 @@
 		</dd>
     </dl>
     {/if}
+	<!----
 	<dl>
         <dt><i class="square"></i><span>{$lang.wholesale_centre}</span></dt>
 		<dd>
             <p{if $action eq 'wholesale_buy'} class="current"{/if}><a href="user.php?act=wholesale_buy" target="_self">{$lang.my_purchase_order}</a></p>
             <p{if $action eq 'wholesale_purchase' || $action eq 'purchase_info'} class="current"{/if}><a href="user.php?act=wholesale_purchase" target="_self">{$lang.want_buy_order}</a></p>
         </dd>
+	</dl>
+	---->
+	
 </div>

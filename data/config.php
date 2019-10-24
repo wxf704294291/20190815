@@ -6,10 +6,10 @@ $db_host   = "localhost:3306";
 $db_name   = "weshop";
 
 // database username
-$db_user   = "root";
+$db_user   = "weshop";
 
 // database password
-$db_pass   = "root";
+$db_pass   = "T7DW4K2Yt2sL6N72";
 
 // table prefix
 $prefix    = "fly_";

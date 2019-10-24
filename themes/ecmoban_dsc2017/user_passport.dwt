@@ -27,7 +27,7 @@ var {$key} = "{$item}";
             <div class="logo">
                 <div class="logoImg"><a href="./index.php" class="logo">{if $user_login_logo}<img src="{$user_login_logo}" />{/if}</a></div>
                 <div class="logo-span">
-                    {if $login_logo_pic}<b style="background:url({$login_logo_pic}) no-repeat;"></b>{/if}
+                
                 </div>
             </div>
             <div class="header-href">
@@ -105,7 +105,7 @@ var {$key} = "{$item}";
             <div class="logo">
                 <div class="logoImg"><a href="./index.php" class="logo">{if $user_login_logo}<img src="{$user_login_logo}" />{/if}</a></div>
                 <div class="logo-span">
-                    {if $login_logo_pic}<b style="background:url({$login_logo_pic}) no-repeat;"></b>{/if}
+                
                 </div>
             </div>
             <div class="header-href">
@@ -268,7 +268,7 @@ var {$key} = "{$item}";
             <div class="logo">
                 <div class="logoImg"><a href="./index.php" class="logo">{if $user_login_logo}<img src="{$user_login_logo}" />{/if}</a></div>
                 <div class="logo-span">
-                    {if $login_logo_pic}<b style="background:url({$login_logo_pic}) no-repeat;"></b>{/if}
+                  
                 </div>
             </div>
             <div class="header-href">
@@ -436,7 +436,7 @@ var {$key} = "{$item}";
             <div class="logo">
                 <div class="logoImg"><a href="./index.php" class="logo">{if $user_login_logo}<img src="{$user_login_logo}" />{/if}</a></div>
                 <div class="logo-span">
-                    {if $login_logo_pic}<b style="background:url({$login_logo_pic}) no-repeat;"></b>{/if}
+                
                 </div>
             </div>
             <div class="header-href">
