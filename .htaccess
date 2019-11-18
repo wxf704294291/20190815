@@ -40,7 +40,7 @@ RewriteRule ^wholesale\.html$             wholesale\.php [L]
 RewriteRule ^gift_gard\.html$             gift_gard\.php [L]
 RewriteRule ^history_list\.html$          history_list\.php [L]
 RewriteRule ^products\.html$              category\.php\?id=858[L]
-RewriteRule ^documents\.html$             article_cat\.php?id=1[L]
+RewriteRule ^documents\.html$             article_cat\.php?id=1004[L]
 RewriteRule ^user\.html$                  user\.php [L]
                                  
 

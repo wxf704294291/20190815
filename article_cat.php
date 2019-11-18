@@ -44,7 +44,7 @@ if (!$smarty->is_cached('article_cat.dwt', $cache_id)) {
 		$smarty->assign('categories_pro', $categories_pro);
 	}
 
-	$smarty->assign('sys_categories', article_categories_tree(0, 2));
+	//$smarty->assign('sys_categories', article_categories_tree(0, 2));
 	$smarty->assign('custom_categories', article_categories_tree(0, 1));
 	$cat_list = get_cat_list($cat_id);
 	$child_count = count($cat_list[0]['child_list']);
