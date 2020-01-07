@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<!-- #BeginLibraryItem "/library/js_languages_new.lbi" --><!-- #EndLibraryItem -->
+<link rel="stylesheet" type="text/css" href="{$site_domain}themes/<?php echo $GLOBALS['_CFG']['template']; ?>/css/baochi.css" />
+</head>
+
+<body>
+<!-- #BeginLibraryItem "/library/page_header_common.lbi" --><!-- #EndLibraryItem -->
+
+<div class="warpper">
+	<div class="bc-content-main">
+		{foreach from=$articles_list item=article}
+			<div id="ad_id_{$article.ad_id}" class="bc-content" style="background-image:url(data/afficheimg/{$article.ad_code})" >
+				  <div class="bc-article-title">
+					   <div class="bc-title">{$article.title}</div>
+					   <i class="bc-i">—— ——</i>
+					   <div class="bc-description">{$article.description}</div>
+				  </div>
+				  <div class="bc-article-content">{$article.content}</div>
+			</div>
+		{/foreach}
+	</div>
+
+ <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+	
+<script type="text/javascript" src="themes/<?php echo $GLOBALS['_CFG']['template']; ?>/js/dsc-common.js"></script>
+<script type="text/javascript" src="themes/<?php echo $GLOBALS['_CFG']['template']; ?>/js/jquery.purebox.js"></script>
+</body>
+</html>
+

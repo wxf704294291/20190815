@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$article.keywords}" />
+<meta name="Description" content="{$article.description}" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$article.title}</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<!-- #BeginLibraryItem "/library/js_languages_new.lbi" --><!-- #EndLibraryItem -->
+</head>
+
+<body class="merchants bg-ligtGary">
+<!-- #BeginLibraryItem "/library/page_header_common.lbi" --><!-- #EndLibraryItem -->
+<div class="container settled-container">
+    <div style="width:100%;height:238px;background:url({$article.file_url});text-align:center;"></div>
+	<div class="w w1200">
+        <div class="settled-article-warp">
+		   <!----
+        	<div class="step-nav">
+            	<div class="title">
+                    <h1>{$article.title}</h1>
+                </div>
+            </div>
+			---->
+            <div class="sett-a-item">
+                <div class="sett-cont">
+                    {$article.content}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>	
+
+ <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+<script type="text/javascript" src="themes/<?php echo $GLOBALS['_CFG']['template']; ?>/js/dsc-common.js"></script>
+<script type="text/javascript" src="themes/<?php echo $GLOBALS['_CFG']['template']; ?>/js/jquery.purebox.js"></script>
+</body>
+</html>
+
